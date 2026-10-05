@@ -30,6 +30,9 @@ Python, pandas, matplotlib, Kaggle notebook. The four analysis scripts and downl
 - Values range from 0.0 to 985.0, mean 96.14, median 68, standard deviation 84.51 (right-skewed).
 
 ## Results (all pooled over 2016-2025, association only)
+
+![Mean PM2.5 by hour of day (Dhaka local time, hour start), with and without the 985.0 rows](figures/pm25_by_hour.png)
+
 - **Hour of day:** the highest mean is at hour 0 (114.36) and the lowest at hour 16 (67.57). Without the 985.0 rows the lowest moves to hour 15 (67.01 vs 67.21 at hour 16).
 - **Weekday vs weekend:** mean 97.64 on weekdays and 92.32 on weekends (medians 70 and 65), a small difference compared with the spread of the data.
 - **Month:** January has the highest mean (198.98) and July the lowest (34.77). The seasonal shape is the same with all months, without the 985.0 rows, and under the 75% coverage rule. Removing the 985.0 rows changes July to September most (August 40.56 to 36.51).
