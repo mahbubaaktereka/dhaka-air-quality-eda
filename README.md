@@ -12,7 +12,7 @@ Exploratory data analysis only (no prediction model). Describe patterns in the d
 **Weather:** Open-Meteo Historical Weather API, models=era5 (ERA5 reanalysis, a model-based estimate that combines observations with a weather model; it is not station measurements). Variables: temperature_2m (C, instant), rain (mm, sum of the preceding hour), wind_speed_10m (km/h, instant), time zone Asia/Dhaka, 2016-11-09 to 2025-03-25. The grid-cell centre is 23.75, 90.5, roughly 9 km from the monitor (23.796374, 90.424614). 73,416 hourly rows, no missing values. Data: Open-Meteo (CC BY 4.0 per its website); cite Zippenfenig (2023), doi:10.5281/zenodo.7970649, and Hersbach et al. (2023), ERA5 hourly data on single levels, doi:10.24381/cds.adbb2d47. Contains modified Copernicus Climate Change Service information.
 
 ## Tools
-Python, pandas, matplotlib, Kaggle notebook. Scripts in this repo use only the csv module.
+Python, pandas, matplotlib, Kaggle notebook. The four analysis scripts and download_weather.py use only the Python standard library.
 
 ## Methodology and decisions
 - Time: Dhaka local time (from_local, UTC+06:00); each hour is labelled by the start of its interval.
@@ -51,4 +51,5 @@ Year-by-year comparisons under the coverage rule, a closer look at the 985.0 val
 ## How to run
 1. Obtain the hourly PM2.5 CSV for OpenAQ location 8415 (sensor 24434) and save it as data/raw/pm25_sensor_24434.csv (git-ignored).
 2. The four scripts (data_check.py, find_empty.py, yearly_missing.py, monthly_grid.py) read that file and print the counts above: python data_check.py
-3. The analysis is in notebooks/dhaka_pm25_eda.ipynb, which expects the PM2.5 CSV and the weather CSV as Kaggle inputs.
+3. download_weather.py downloads the weather CSV from Open-Meteo (no key needed) and saves it as data/raw/weather_era5_dhaka.csv.
+4. The analysis is in notebooks/dhaka_pm25_eda.ipynb, which expects the PM2.5 CSV and the weather CSV as Kaggle inputs.
