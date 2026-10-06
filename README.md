@@ -52,7 +52,7 @@ Python, pandas, matplotlib, Kaggle notebook. The four analysis scripts and downl
 Year-by-year comparisons under the coverage rule, a closer look at the 985.0 values, and a special-period comparison only if the data supports it.
 
 ## How to run
-1. Obtain the hourly PM2.5 CSV for OpenAQ location 8415 (sensor 24434) and save it as data/raw/pm25_sensor_24434.csv (git-ignored).
+1. The hourly PM2.5 data comes from OpenAQ (location 8415, sensor 24434, an AirNow reference monitor). OpenAQ labels this data as US Public Domain; the data owner was not independently verified, so please credit OpenAQ as the source. The data was downloaded once through the OpenAQ API and saved as `data/raw/pm25_sensor_24434.csv` (git-ignored, so it is not in this repository). To reproduce the analysis, obtain the same CSV from OpenAQ and save it at that path.
 2. The four scripts (data_check.py, find_empty.py, yearly_missing.py, monthly_grid.py) read that file and print the counts above: python data_check.py
 3. download_weather.py downloads the weather CSV from Open-Meteo (no key needed) and saves it as data/raw/weather_era5_dhaka.csv.
 4. The analysis is in notebooks/dhaka_pm25_eda.ipynb, which expects the PM2.5 CSV and the weather CSV as Kaggle inputs.
